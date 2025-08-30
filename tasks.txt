@@ -1,0 +1,239 @@
+Tasks
+Given a string, write program to print only alphabets in the given string
+s = input("Enter a string: ")
+result = ""
+for ch in s:
+    if ch.isalpha():   # check if character is an alphabet
+        result += ch
+print("Alphabets in the string:", result)
+
+Given string write program that prints all the uppercase letters of the string
+s = input("Enter a string: ")
+result = ""
+for ch in s:
+    if ch.isupper():   # check if character is uppercase
+        result += ch
+print("Uppercase letters in the string:", result)
+
+See about built in functions and what is the use case of built-in functions its advantages and where do we use it
+
+Built-in functions are the functions that come pre-defined in a programming language.
+They are ready to use and provided by the language itself (not written by the user).
+Examples:
+ → print(), len(), type(), max(), min(), sum(), input()
+
+Try to do a simple calculator using python
+a = float(input("Enter first number: "))
+b = float(input("Enter second number: "))
+op = input("Choose operation (+, -, *, /): ")
+
+if op == "+":
+    print("Result =", a + b)
+elif op == "-":
+    print("Result =", a - b)
+elif op == "*":
+    print("Result =", a * b)
+elif op == "/":
+    print("Result =", a / b if b != 0 else " Not allowed")
+else:
+    print("Invalid operation")
+using while loop print first 5 numbers and also for loop
+while:
+Repeats a block of code as long as a condition is true
+i = 1
+while i <= 5:
+    print(i)
+    i += 1
+for:
+Repeats a block of code for each item in a sequence or range
+for i in range(1, 6):
+    print(i)
+
+Write program that reads a number N and prints square of N rows  and  N columns using numbers starting from 1
+N = int(input("Enter N: "))
+num = 1
+for i in range(N):
+    for j in range(N):
+        print(num, end=" ")
+        num += 1
+    print()
+ 
+Write a program that reads a number N and prints two Right Angled Triangles of N rows, using numbers starting from 1.
+N = int(input("Enter N: "))
+num = 1
+for i in range(1, N + 1):
+    for j in range(i):
+        print(num, end=" ")
+        num += 1
+    print()
+print()  
+num = 1
+for i in range(N, 0, -1):
+    for j in range(i):
+        print(num, end=" ")
+        num += 1
+    print()
+ 
+Write a program to print the factorial of N Factorial is the product of all positive integers less than or equal to N.
+N = int(input("Enter N: "))
+fact = 1
+for i in range(1, N + 1):
+    fact *= i
+print("Factorial of", N, "is:", fact)
+
+Write a program that reads a string and prints the count of vowels in the string.
+text = input("Enter a string: ")
+vowels = "aeiouAEIOU"
+count = 0
+for ch in text:
+    if ch in vowels:
+        count += 1
+print("Number of vowels:", count)
+
+Given two numbers X and N, write a program to print the sum of N terms in the given series.
+Series:
+(x)^2, (xx)^2, (xxx)², N terms
+X = int(input("Enter X: "))
+N = int(input("Enter N: "))
+total = 0
+for i in range(2, N + 2):   # starting from "xx" (2 digits) till N terms
+    term = int(str(X) * i)  # make number like 22, 222, etc.
+    total += term ** 2
+print("Sum of series =", total)
+
+2 Table using python
+for i in range(1, 11):
+    print(f"2 x {i} = {2*i}")
+
+write a program to print sum of 1 st five natural nums 
+s = 0
+for i in range(1, 6):
+    s += i
+print("Sum =", s)
+
+create a variable meghna  condition if meghna died it should print( surya meets priya) if meghna not died it should print(meghna weds surya)
+
+meghna = "alive"
+print("surya meets priya" if meghna == "died" else "meghna weds surya")
+
+Python code to find odd or even
+num = int(input("Enter a number: "))
+print("Even" if num % 2 == 0 else "Odd")
+
+Perimeter of rectangle
+l = float(input("Enter length: "))
+w = float(input("Enter width: "))
+print("Perimeter =", 2 * (l + w))
+
+Program
+A program is a set of instructions written in a programming language to make a computer perform a specific task.
+
+Why do we need python
+It is simple, versatile, and powerful for web development, data science, AI, automation.
+
+Application of python
+•	Web Development 
+•	Data Science 
+•	Artificial Intelligence & Machine Learning 
+•	Automation
+•	Game Development 
+•	Desktop Applications 
+•	Cybersecurity 
+•	IoT
+Variable
+A variable is a named storage location in memory used to hold data that can change during program execution. variable is stored at a specific address.
+
+What is value
+value is the actual data stored in a variable, such as a number, Boolean.
+
+What is data type
+Data type defines the kind of value a variable can hold.
+
+Declaration and initialisation
+Declaration is creating a variable by specifying its name (and type in some languages), while initialization is assigning an initial value to that variable.
+
+Pandas and numpy 
+NumPy is used for fast numerical operations on arrays,
+Pandas is used for data manipulation and analysis with labeled data.
+
+Difference between library and frame work
+A library is code you call to do tasks, while a framework calls your code and controls the program’s flow.
+Swapping
+Exchanging the values of two variables
+a, b = 5, 10
+a, b = b, a
+print(a, b)   
+
+Counting
+Finding the number of occurrences of an element using .count().
+Searching
+Finding the position of an element using .find()
+Title
+First character of every word to uppercase
+Replace
+Returns a new string where all occurrences of a substring are replaced with another substring.
+Strip
+Removes leading and trailing spaces from a string.
+Break
+Used to exit a loop immediately when a condition is met.
+Pass
+A null statement used as a placeholder that does nothing.
+Islower
+Returns True if all characters in the string are lowercase.
+Isalpha
+Returns True if all characters in the string are alphabets.
+If
+The if statement checks a condition and executes a block of code if the condition is true.
+If-else
+The if-else statement executes one block if the condition is true, otherwise executes the other block.
+Nested if
+A nested if means using an if statement inside another if to check multiple conditions.
+isalnum 
+Returns True if all characters in the string are alphabets or digits
+Odd or even
+num = int(input())
+print("Even" if num % 2 == 0 else "Odd") 
+
+For Initializing -> git init
+2. for adding -> git add .
+3. for checking status -> git status
+4. for commiting -> git commit -m "Initial commit"
+5. for push -> git push -u origin main
+git log
+git if
+git pull
+staging and unstaging
+commit #
+grt reset
+getbranch
+git stach
+Add 2 integers
+a = int(input())
+b = int(input())
+print(“Add”,a+b)
+Perimeter of rectangle
+I=int(input())
+w= int(input())
+print(2*(i+w))
+
+txt=”Hello,I am ram”
+x=txt.startswith(“Hello”)
+print(x)
+Factorial
+n= int(input())
+fact=1
+i=1
+while i<=n:
+fact=fact*i
+i+=1
+print(fact)
+
+Instruction
+Module: Data Preprocessing & ED
+Download and preprocess air quality datasets.
+Conduct EDA (Exploratory Data Analysis) to understand pollutant trends and correlations.
+Resample data and prepare features for forecasting.
+
+THANK YOU!
+Prepared By:
+RAMANUJAN R
