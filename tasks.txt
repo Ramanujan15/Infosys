@@ -237,3 +237,51 @@ Resample data and prepare features for forecasting.
 THANK YOU!
 Prepared By:
 RAMANUJAN R
+
+
+
+
+
+
+
+Module 1: Data Preprocessing & EDA
+
+Air pollution is a major environmental challenge in India, particularly in metropolitan cities like Delhi. Particulate matter (PM2.5 and PM10) along with gases such as NO2, SO2, Ozone, and CO significantly impact public health. To study air quality trends, datasets from the Central Pollution Control Board (CPCB) and OpenAQ provide valuable insights. This report demonstrates Module 1 of our project: Data Preprocessing and Exploratory Data Analysis (EDA). The goal is to clean and preprocess raw air-quality data, visualize pollutant behavior, explore correlations, and prepare features suitable for forecasting models. 
+
+Python code for data loading and preprocessing:
+•  Handle missing values.
+•  Convert timestamps.
+•  Keep main pollutants (PM2.5, PM10, NO2, SO2, O3, CO).
+
+import pandas as pd
+df = pd.read_csv("Delhi_AirQuality.csv")
+df['datetime'] = pd.to_datetime(df['datetime'])
+df.set_index('datetime', inplace=True)
+pollutants = ["PM2.5", "PM10", "NO2", "SO2", "Ozone", "CO"]
+df = df[pollutants].dropna()
+
+Python code for EDA visualizations:
+•  Trend plots over time.
+•  Correlation heatmap.
+•  Station-wise pollutant averages.
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+df['PM2.5'].plot(figsize=(10,4), title="PM2.5 Trend")
+plt.show()
+plt.figure(figsize=(6,5))
+sns.heatmap(df.corr(), annot=True, cmap="coolwarm")
+plt.title("Pollutant Correlation")
+plt.show()
+
+
+Python code for resampling and lag feature creation:
+•  Daily/weekly averages.
+•  Feature creation (lag features for forecasting).
+
+daily = df.resample('D').mean()
+weekly = df.resample('W').mean()
+daily['pm25_lag1'] = daily['PM2.5'].shift(1)
+daily['pm25_lag7'] = daily['PM2.5'].shift(7)
+
+https://drive.google.com/drive/folders/15Ybni7h5rMIx26IsFlcbKaO459Esk-zg?usp=sharing
